@@ -76,18 +76,5 @@ Sobre a validação: o formulário usa os atributos nativos do HTML5 (`required`
 - LGPD: coleta mínima (atividade, litros, data e observação opcional), sem nome, e-mail ou endereço. Há aviso de privacidade no formulário. Use apenas dados fictícios.
 - Não há chaves, senhas ou segredos no repositório.
 
-## Prints das telas
-
-| Celular | Tablet | Desktop |
-| --- | --- | --- |
-| ![Início no celular](img/inicio-celular.png) | ![Início no tablet](img/inicio-tablet.png) | ![Início no desktop](img/inicio-desktop.png) |
-| ![Registro no celular](img/registro-celular.png) | ![Registro no tablet](img/registro-tablet.png) | ![Registro no desktop](img/registro-desktop.png) |
-
-Mensagens de validação na tela:
-
-![Erros de validação](img/registro-erros-desktop.png)
-
-
-## Autor
 
 Gustavo — Desenvolvimento de Software Multiplataforma, Fatec Luigi Papaiz.

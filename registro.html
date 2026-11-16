@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registrar consumo | Gota Certa</title>
+  <meta name="description" content="Registre, edite e remova o consumo de água da sua casa e acompanhe a média por pessoa.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 6C22 22 14 31 14 42a18 18 0 0 0 36 0C50 31 42 22 32 6z' fill='%23146c8a'/%3E%3C/svg%3E">
+  <!-- Bootstrap 5.3.3 (CDN) com verificação de integridade (SRI) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <!-- Navbar do Bootstrap (requisito: Bootstrap em ao menos uma seção) -->
+    <nav class="navbar navbar-expand-md navbar-gota" data-bs-theme="dark" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Gota Certa</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir ou fechar o menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu-principal">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link active" href="registro.html" aria-current="page">Registrar consumo</a></li>
+            <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre o projeto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo" class="container pagina">
+    <h1>Registrar consumo de água</h1>
+    <p class="lead">Anote quanto você gastou em cada atividade. Os registros ficam só neste navegador.</p>
+
+    <!-- Mensagens de sucesso e erro aparecem aqui (leitores de tela anunciam automaticamente) -->
+    <div id="alerta" class="alert d-none" role="status" aria-live="polite"></div>
+
+    <!-- RESUMO DO DIA -->
+    <section class="bloco" id="resumo" aria-labelledby="titulo-resumo">
+      <h2 id="titulo-resumo">Resumo de hoje</h2>
+      <div class="grade grade-resumo">
+        <div class="card cartao-resumo">
+          <div class="card-body">
+            <p class="cartao-titulo">Total registrado hoje</p>
+            <p class="cartao-valor"><span id="resumo-total">0</span> L</p>
+          </div>
+        </div>
+        <div class="card cartao-resumo">
+          <div class="card-body">
+            <label class="cartao-titulo" for="campo-moradores">Moradores na casa</label>
+            <input class="form-control" type="number" id="campo-moradores" name="moradores" min="1" max="15" step="1" value="1" required aria-describedby="erro-moradores">
+            <div class="invalid-feedback" id="erro-moradores"></div>
+          </div>
+        </div>
+        <div class="card cartao-resumo">
+          <div class="card-body">
+            <p class="cartao-titulo">Média por pessoa</p>
+            <p class="cartao-valor"><span id="resumo-media">0</span> L</p>
+            <p class="cartao-status" id="resumo-status">Nenhum registro hoje.</p>
+          </div>
+        </div>
+      </div>
+      <p class="fonte">Referência: 110 litros por pessoa por dia (ONU). Como você registra só algumas atividades, a média é uma estimativa.</p>
+    </section>
+
+    <!-- FORMULÁRIO PRINCIPAL -->
+    <section class="bloco" id="formulario" aria-labelledby="titulo-form">
+      <h2 id="titulo-form">Novo registro</h2>
+
+      <!-- novalidate: o navegador não mostra os balões dele; as regras (required, min, max, maxlength)
+           continuam no HTML e o JavaScript mostra as mensagens na tela -->
+      <form id="form-registro" novalidate>
+        <div class="grade grade-form">
+          <div>
+            <label class="form-label" for="campo-atividade">Atividade</label>
+            <select class="form-select" id="campo-atividade" name="atividade" required aria-describedby="erro-atividade">
+              <option value="">Escolha uma atividade</option>
+              <option>Banho</option>
+              <option>Descarga</option>
+              <option>Lavar louça</option>
+              <option>Lavar roupa</option>
+              <option>Cozinhar</option>
+              <option>Escovar os dentes</option>
+              <option>Limpeza da casa</option>
+              <option>Regar plantas</option>
+              <option>Outro</option>
+            </select>
+            <div class="invalid-feedback" id="erro-atividade"></div>
+          </div>
+
+          <div>
+            <label class="form-label" for="campo-litros">Litros gastos</label>
+            <input class="form-control" type="number" id="campo-litros" name="litros" min="1" max="1000" step="1" inputmode="numeric" required aria-describedby="erro-litros">
+            <div class="invalid-feedback" id="erro-litros"></div>
+          </div>
+
+          <div>
+            <label class="form-label" for="campo-data">Data</label>
+            <input class="form-control" type="date" id="campo-data" name="data" min="2020-01-01" required aria-describedby="erro-data">
+            <div class="invalid-feedback" id="erro-data"></div>
+          </div>
+
+          <div>
+            <label class="form-label" for="campo-observacao">Observação <span class="text-muted">(opcional)</span></label>
+            <input class="form-control" type="text" id="campo-observacao" name="observacao" maxlength="80" autocomplete="off" aria-describedby="erro-observacao">
+            <div class="invalid-feedback" id="erro-observacao"></div>
+          </div>
+        </div>
+
+        <p class="aviso-privacidade">Privacidade: não escreva nome, endereço ou outros dados pessoais. Use apenas dados fictícios. Os registros ficam somente no seu navegador e você pode apagá-los quando quiser.</p>
+
+        <div class="acoes-form">
+          <button type="submit" class="btn btn-gota" id="btn-salvar">Adicionar registro</button>
+          <button type="button" class="btn btn-outline-secondary d-none" id="btn-cancelar">Cancelar edição</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- LISTA DE REGISTROS -->
+    <section class="bloco" id="registros" aria-labelledby="titulo-registros">
+      <h2 id="titulo-registros">Meus registros</h2>
+      <p id="lista-vazia" class="vazio">Você ainda não tem registros. Preencha o formulário acima para começar.</p>
+      <div class="table-responsive">
+        <table class="table align-middle tabela-registros" id="tabela-registros">
+          <caption class="visually-hidden">Lista de registros de consumo de água</caption>
+          <thead>
+            <tr>
+              <th scope="col">Data</th>
+              <th scope="col">Atividade</th>
+              <th scope="col">Litros</th>
+              <th scope="col">Observação</th>
+              <th scope="col">Ações</th>
+            </tr>
+          </thead>
+          <tbody id="lista-registros"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PAINEL DE REGISTRO DE ATIVIDADES (LOG) -->
+    <section class="bloco" id="painel-log" aria-labelledby="titulo-log">
+      <h2 id="titulo-log">Painel de atividades</h2>
+      <p class="fonte">Histórico das ações feitas nesta página, da mais recente para a mais antiga.</p>
+      <div class="table-responsive painel-log">
+        <table class="table table-sm" id="tabela-log">
+          <caption class="visually-hidden">Registro de atividades com data, ação e resultado</caption>
+          <thead>
+            <tr>
+              <th scope="col">Data e hora</th>
+              <th scope="col">Ação</th>
+              <th scope="col">Resultado</th>
+            </tr>
+          </thead>
+          <tbody id="lista-log"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <p>Gota Certa — protótipo acadêmico de Tecnologia Cidadã (Desenvolvimento Web I, Fatec).</p>
+      <p>Use apenas dados fictícios. Nenhuma informação sai do seu navegador.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script src="js/validacao.js"></script>
+  <script src="js/registro.js"></script>
+</body>
+</html>

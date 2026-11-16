@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre o projeto | Gota Certa</title>
+  <meta name="description" content="Como a Gota Certa funciona, como se sustenta como negócio de impacto e como protege a privacidade.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 6C22 22 14 31 14 42a18 18 0 0 0 36 0C50 31 42 22 32 6z' fill='%23146c8a'/%3E%3C/svg%3E">
+  <!-- Bootstrap 5.3.3 (CDN) com verificação de integridade (SRI) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <!-- Navbar do Bootstrap (requisito: Bootstrap em ao menos uma seção) -->
+    <nav class="navbar navbar-expand-md navbar-gota" data-bs-theme="dark" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Gota Certa</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir ou fechar o menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu-principal">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="registro.html">Registrar consumo</a></li>
+            <li class="nav-item"><a class="nav-link active" href="sobre.html" aria-current="page">Sobre o projeto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo" class="container pagina">
+    <h1>Sobre o projeto</h1>
+
+    <section class="bloco" id="como-funciona" aria-labelledby="titulo-como">
+      <h2 id="titulo-como">Como funciona</h2>
+      <ol class="passos">
+        <li>Na página <a href="registro.html">Registrar consumo</a>, você anota quanto gastou numa atividade (por exemplo, um banho de 40 litros).</li>
+        <li>O site soma os registros do dia e divide pelo número de moradores da casa.</li>
+        <li>O resultado é comparado com a referência de 110 litros por pessoa.</li>
+        <li>Você pode corrigir ou apagar qualquer registro, e o painel de atividades mostra tudo o que foi feito.</li>
+      </ol>
+    </section>
+
+    <section class="bloco" id="negocio" aria-labelledby="titulo-negocio">
+      <h2 id="titulo-negocio">Como se sustenta como negócio de impacto</h2>
+      <p>O uso por famílias é gratuito, porque é onde está o impacto. A receita viria de quem ganha dinheiro quando o desperdício diminui:</p>
+      <ul>
+        <li><strong>Condomínios e pequenos comércios:</strong> assinatura mensal por painel com relatórios por unidade ou por setor (lava-rápido, padaria, escola).</li>
+        <li><strong>Companhias de saneamento e prefeituras:</strong> licença para campanhas educativas por bairro, com dados agregados e anônimos.</li>
+        <li><strong>Escalabilidade:</strong> o mesmo modelo serve para energia e alimentos, trocando apenas a unidade (kWh, kg).</li>
+      </ul>
+      <p>O custo é baixo porque o protótipo roda no navegador, sem servidor próprio. Num produto real, o banco de dados em nuvem seria o principal custo.</p>
+    </section>
+
+    <section class="bloco" id="privacidade" aria-labelledby="titulo-privacidade">
+      <h2 id="titulo-privacidade">Privacidade e LGPD</h2>
+      <p>O site pede só o necessário: atividade, litros, data e uma observação opcional. Não pede nome, e-mail, endereço nem documentos. Os registros ficam apenas no navegador de quem os criou e podem ser apagados a qualquer momento.</p>
+    </section>
+
+    <section class="bloco" id="tecnologias" aria-labelledby="titulo-tec">
+      <h2 id="titulo-tec">Tecnologias</h2>
+      <p>HTML semântico, CSS (Flexbox, Grid e media queries), JavaScript basico e Bootstrap 5.</p>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <p>Gota Certa — protótipo acadêmico de Tecnologia Cidadã (Desenvolvimento Web I, Fatec).</p>
+      <p>Use apenas dados fictícios. Nenhuma informação sai do seu navegador.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

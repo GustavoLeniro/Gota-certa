@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Início | Gota Certa</title>
+  <meta name="description" content="Registre o consumo de água da sua casa e compare com a referência de 110 litros por pessoa por dia.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M32 6C22 22 14 31 14 42a18 18 0 0 0 36 0C50 31 42 22 32 6z' fill='%23146c8a'/%3E%3C/svg%3E">
+  <!-- Bootstrap 5.3.3 (CDN) com verificação de integridade (SRI) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="cabecalho">
+    <!-- Navbar do Bootstrap (requisito: Bootstrap em ao menos uma seção) -->
+    <nav class="navbar navbar-expand-md navbar-gota" data-bs-theme="dark" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Gota Certa</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir ou fechar o menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu-principal">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="registro.html">Registrar consumo</a></li>
+            <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre o projeto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+    <!-- Seção principal: pergunta + comparativo visual -->
+    <section class="hero" aria-labelledby="titulo-hero">
+      <div class="container hero-grade">
+        <div class="hero-texto">
+          <h1 id="titulo-hero">Quantos litros de água a sua casa usa por dia?</h1>
+          <p class="lead">Registre o seu consumo, compare com a referência de 110 litros por pessoa e descubra em quais atividades dá para economizar.</p>
+          <a class="btn btn-gota btn-lg" href="registro.html">Registrar meu consumo</a>
+        </div>
+
+        <figure class="comparativo">
+          <figcaption>Litros de água por pessoa, por dia</figcaption>
+          <div class="barra-linha">
+            <span class="barra-rotulo">Referência da ONU</span>
+            <div class="barra-trilho">
+              <div class="barra barra-ref">110 L</div>
+            </div>
+          </div>
+          <div class="barra-linha">
+            <span class="barra-rotulo">Média no Brasil</span>
+            <div class="barra-trilho">
+              <div class="barra barra-brasil">cerca de 154 L</div>
+            </div>
+          </div>
+          <p class="fonte">Valores aproximados. A média nacional varia entre 150 e 160 litros conforme o ano (SNIS). Fontes na seção “A evidência”.</p>
+        </figure>
+      </div>
+    </section>
+
+    <div class="container">
+
+      <section class="bloco" id="problema" aria-labelledby="titulo-problema">
+        <h2 id="titulo-problema">O problema</h2>
+        <p>Muita gente só descobre quanto gasta de água quando a conta chega, e a conta mostra um total do mês, não o que aconteceu em cada dia. Sem enxergar onde a água vai (banho longo, descarga, torneira aberta), fica difícil mudar o hábito e economizar.</p>
+      </section>
+
+      <section class="bloco" id="cidadao" aria-labelledby="titulo-cidadao">
+        <h2 id="titulo-cidadao">Quem é o cidadão afetado</h2>
+        <p>Moradores de casas e apartamentos urbanos que pagam pela água, mas não têm uma forma simples de acompanhar o próprio consumo. Em especial famílias de renda apertada, para quem economizar na conta faz diferença, e pequenos comércios de bairro, que gastam água todos os dias sem medir.</p>
+      </section>
+
+      <section class="bloco" id="evidencia" aria-labelledby="titulo-evidencia">
+        <h2 id="titulo-evidencia">A evidência</h2>
+        <p>São dados públicos do Sistema Nacional de Informações sobre Saneamento (SNIS), organizados pelo Instituto Trata Brasil:</p>
+        <ul class="lista-evidencias">
+          <li><strong>37,78%</strong> da água tratada é perdida na distribuição antes de chegar às casas (SNIS 2022). O desperdício acontece na rede, mas mostra como a água é tratada como um recurso abundante.</li>
+          <li><strong>150 a 160 litros</strong> por pessoa por dia é o consumo médio no país, acima dos <strong>110 litros</strong> que a ONU indica como suficientes para consumo e higiene.</li>
+        </ul>
+        <p class="fonte">Fontes:
+          <a href="https://tratabrasil.org.br/wp-content/uploads/2024/06/Resumo-Executivo-Perdas-de-Agua-2024-ITB-V2.pdf" target="_blank" rel="noopener noreferrer">Instituto Trata Brasil — Estudo de Perdas de Água 2024 (resumo executivo)</a>;
+          <a href="https://opopular.com.br/infomercial/agua-um-recurso-vital-sob-ameaca-do-desperdicio-1.3306904" target="_blank" rel="noopener noreferrer">O Popular — consumo médio e recomendação da ONU (SNIS 2022)</a>.
+        </p>
+      </section>
+
+      <section class="bloco" id="ods" aria-labelledby="titulo-ods">
+        <h2 id="titulo-ods">Objetivos de Desenvolvimento Sustentável</h2>
+        <div class="grade grade-3">
+          <article class="ods">
+            <h3>ODS 6</h3>
+            <p>Água potável e saneamento: usar a água com mais eficiência e menos desperdício.</p>
+          </article>
+          <article class="ods">
+            <h3>ODS 11</h3>
+            <p>Cidades e comunidades sustentáveis: ajudar bairros a enfrentar a pressão sobre o abastecimento.</p>
+          </article>
+          <article class="ods">
+            <h3>ODS 13</h3>
+            <p>Ação contra a mudança do clima: crises hídricas ficam mais frequentes e economizar reduz o risco.</p>
+          </article>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container rodape-conteudo">
+      <p>Gota Certa — protótipo acadêmico de Tecnologia Cidadã (Desenvolvimento Web I, Fatec).</p>
+      <p>Use apenas dados fictícios. Nenhuma informação sai do seu navegador.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
